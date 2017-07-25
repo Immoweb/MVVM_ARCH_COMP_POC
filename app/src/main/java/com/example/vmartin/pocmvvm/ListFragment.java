@@ -26,8 +26,6 @@ import java.util.ArrayList;
 
 import javax.inject.Inject;
 
-import dagger.android.support.AndroidSupportInjection;
-
 
 public class ListFragment extends LifecycleFragment implements Injectable {
 
@@ -41,12 +39,6 @@ public class ListFragment extends LifecycleFragment implements Injectable {
     ListViewModel listViewModel;
 
     DataBindingComponent dataBindingComponent = new FragmentDataBindingComponent(this);
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        AndroidSupportInjection.inject(this);
-    }
 
     @Nullable
     @Override
