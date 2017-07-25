@@ -5,8 +5,8 @@
     <data>
 
         <variable
-            name="viewModel"
-            type="com.example.vmartin.pocmvvm.viewmodel.RecordViewModel"/>
+            name="record"
+            type="com.example.vmartin.pocmvvm.model.Record"/>
     </data>
 
     <android.support.v7.widget.CardView
@@ -28,11 +28,12 @@
                 android:id="@+id/map"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                app:staticMapUrl="@{viewModel.imageUrl}"
+                app:imageUrl="@{record.imageUrl}"
                  />
 
             <TextView
                 android:id="@+id/text_street"
+                android:text="@{record.fields.emplacement}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/map"
@@ -43,6 +44,7 @@
 
             <TextView
                 android:id="@+id/text_food_truck_name"
+                android:text="@{record.foodTruck}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/text_street"

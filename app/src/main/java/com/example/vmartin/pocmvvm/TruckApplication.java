@@ -3,7 +3,7 @@ package com.example.vmartin.pocmvvm;
 import android.app.Activity;
 import android.app.Application;
 
-import com.example.vmartin.pocmvvm.di.DaggerAppComponent;
+import com.example.vmartin.pocmvvm.di.AppInjector;
 
 import javax.inject.Inject;
 
@@ -20,14 +20,7 @@ public class TruckApplication extends Application implements HasActivityInjector
     @Override
     public void onCreate() {
         super.onCreate();
-        initializeComponent();
-    }
-
-    private void initializeComponent() {
-        DaggerAppComponent.builder()
-                .application(this)
-                .build()
-                .inject(this);
+        AppInjector.init(this); // to inject Activities and Fragments automatically in Dagger
     }
 
     @Override

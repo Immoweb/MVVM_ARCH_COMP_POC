@@ -16,6 +16,7 @@
 
 package com.example.vmartin.pocmvvm.ui;
 
+import android.databinding.DataBindingComponent;
 import android.databinding.DataBindingUtil;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
@@ -25,7 +26,6 @@ import android.view.ViewGroup;
 import com.example.vmartin.pocmvvm.R;
 import com.example.vmartin.pocmvvm.databinding.ItemFoodTruckBinding;
 import com.example.vmartin.pocmvvm.model.Record;
-import com.example.vmartin.pocmvvm.viewmodel.RecordViewModel;
 
 import java.util.List;
 
@@ -33,10 +33,14 @@ public class FoodTruckAdapter extends RecyclerView.Adapter<FoodTruckAdapter.Food
 
     @Nullable
     private final FoodTruckClickCallback mFoodTruckClickCallback;
+    private final DataBindingComponent dataBindingComponent;
+
     List<? extends Record> mRecords;
 
-    public FoodTruckAdapter(@Nullable FoodTruckClickCallback clickCallback) {
-        mFoodTruckClickCallback = clickCallback;
+    public FoodTruckAdapter(DataBindingComponent dataBindingComponent,
+                            @Nullable FoodTruckClickCallback clickCallback) {
+        this.dataBindingComponent = dataBindingComponent;
+        this.mFoodTruckClickCallback = clickCallback;
     }
 
     public void setData(final List<? extends Record> mRecords) {
@@ -49,16 +53,14 @@ public class FoodTruckAdapter extends RecyclerView.Adapter<FoodTruckAdapter.Food
 
         ItemFoodTruckBinding binding = DataBindingUtil
                 .inflate(LayoutInflater.from(parent.getContext()), R.layout.item_food_truck,
-                        parent, false);
+                        parent, false, dataBindingComponent);
         //binding.setCallback(mFoodTruckClickCallback);
         return new FoodTruckHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(FoodTruckHolder holder, int position) {
-        holder.binding.setViewModel(new RecordViewModel(
-                holder.itemView.getContext(),
-                mRecords.get(position)));
+        holder.binding.setRecord(mRecords.get(position));
     }
 
     @Override

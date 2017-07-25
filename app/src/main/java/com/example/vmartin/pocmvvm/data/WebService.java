@@ -9,8 +9,8 @@ import retrofit2.http.Query;
 
 public interface WebService {
 
-    public static final String ENDPOINT = "https://opendata.bruxelles.be/api/records/1.0/";
-    public static final int TIMEOUT_IN_SEC = 15;
+    String ENDPOINT = "https://opendata.bruxelles.be/api/records/1.0/";
+    int TIMEOUT_IN_SEC = 15;
 
 
     @GET("search?dataset=bxl_food_trucks")

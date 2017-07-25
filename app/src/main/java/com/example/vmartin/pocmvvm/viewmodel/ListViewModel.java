@@ -16,7 +16,7 @@ public class ListViewModel extends ViewModel {
     private final LiveData<ArrayList<Record>> mObservableData;
 
     @Inject
-    public ListViewModel(FoodTruckRepository repository) {
+    ListViewModel(FoodTruckRepository repository) {
         mObservableData = repository.loadFoodTrucks();
     }
 
