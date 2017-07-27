@@ -3,8 +3,8 @@ package com.example.vmartin.pocmvvm.di;
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 
-import com.example.vmartin.pocmvvm.TruckViewModelFactory;
-import com.example.vmartin.pocmvvm.viewmodel.ListViewModel;
+import com.example.vmartin.pocmvvm.util.TruckViewModelFactory;
+import com.example.vmartin.pocmvvm.ui.foodtrucklist.ListViewModel;
 
 import dagger.Binds;
 import dagger.Module;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.vmartin.pocmvvm.ui;
+package com.example.vmartin.pocmvvm.ui.foodtrucklist;
 
 import android.databinding.DataBindingComponent;
 import android.databinding.DataBindingUtil;
@@ -35,7 +35,7 @@ public class FoodTruckAdapter extends RecyclerView.Adapter<FoodTruckAdapter.Food
     private final FoodTruckClickCallback mFoodTruckClickCallback;
     private final DataBindingComponent dataBindingComponent;
 
-    List<? extends Record> mRecords;
+    List<Record> mRecords;
 
     public FoodTruckAdapter(DataBindingComponent dataBindingComponent,
                             @Nullable FoodTruckClickCallback clickCallback) {
@@ -43,7 +43,7 @@ public class FoodTruckAdapter extends RecyclerView.Adapter<FoodTruckAdapter.Food
         this.mFoodTruckClickCallback = clickCallback;
     }
 
-    public void setData(final List<? extends Record> mRecords) {
+    public void setData(final List<Record> mRecords) {
         this.mRecords = mRecords;
         notifyDataSetChanged();
     }

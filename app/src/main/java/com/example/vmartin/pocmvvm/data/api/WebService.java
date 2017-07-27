@@ -1,8 +1,9 @@
-package com.example.vmartin.pocmvvm.data;
+package com.example.vmartin.pocmvvm.data.api;
+
+import android.arch.lifecycle.LiveData;
 
 import com.example.vmartin.pocmvvm.model.ResponseOpenData;
 
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
@@ -14,6 +15,6 @@ public interface WebService {
 
 
     @GET("search?dataset=bxl_food_trucks")
-    Call<ResponseOpenData> getAllFoodTruck(@Query("rows") int nbr);
+    LiveData<ApiResponse<ResponseOpenData>> getAllFoodTruck(@Query("rows") int nbr);
 
 }

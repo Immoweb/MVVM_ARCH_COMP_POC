@@ -1,6 +1,7 @@
 package com.example.vmartin.pocmvvm.di;
 
-import com.example.vmartin.pocmvvm.ListFragment;
+
+import com.example.vmartin.pocmvvm.ui.foodtrucklist.ListFragment;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;

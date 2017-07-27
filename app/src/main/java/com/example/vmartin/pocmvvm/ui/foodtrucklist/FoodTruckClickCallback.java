@@ -1,4 +1,4 @@
-package com.example.vmartin.pocmvvm.ui;
+package com.example.vmartin.pocmvvm.ui.foodtrucklist;
 
 import com.example.vmartin.pocmvvm.model.Record;
 

@@ -18,9 +18,9 @@ package com.example.vmartin.pocmvvm.ui.common;
 
 import android.support.v4.app.FragmentManager;
 
-import com.example.vmartin.pocmvvm.ListFragment;
 import com.example.vmartin.pocmvvm.MainActivity;
 import com.example.vmartin.pocmvvm.R;
+import com.example.vmartin.pocmvvm.ui.foodtrucklist.ListFragment;
 
 import javax.inject.Inject;
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.vmartin.pocmvvm;
+package com.example.vmartin.pocmvvm.util;
 
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
