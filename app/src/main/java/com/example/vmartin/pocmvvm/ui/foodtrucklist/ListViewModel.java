@@ -12,6 +12,7 @@ import com.example.vmartin.pocmvvm.data.Resource;
 import com.example.vmartin.pocmvvm.data.util.AbsentLiveData;
 import com.example.vmartin.pocmvvm.model.Record;
 import com.example.vmartin.pocmvvm.repository.FoodTruckRepository;
+import com.example.vmartin.pocmvvm.util.Objects;
 
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class ListViewModel extends ViewModel {
     private final LiveData<Resource<List<Record>>> mObservableData;
 
     @Inject
-    ListViewModel(final FoodTruckRepository repository) {
+    public ListViewModel(final FoodTruckRepository repository) {
         mObservableData = Transformations.switchMap(param, new Function<Integer,
                 LiveData<Resource<List<Record>>>>() {
 
@@ -48,6 +49,9 @@ public class ListViewModel extends ViewModel {
     }
 
     public void setParam(@NonNull Integer input) {
+        if (Objects.equals(this.param.getValue(), input)) {
+            return;
+        }
         param.setValue(input);
     }
 

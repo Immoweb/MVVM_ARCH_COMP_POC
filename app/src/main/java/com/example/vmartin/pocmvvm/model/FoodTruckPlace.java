@@ -317,6 +317,35 @@ public class FoodTruckPlace implements Parcelable {
     }
 
     @Override
+    public String toString() {
+        return "FoodTruckPlace{" +
+                "emplacement='" + emplacement + '\'' +
+                ", locationInFrench='" + locationInFrench + '\'' +
+                ", locationInDutch='" + locationInDutch + '\'' +
+                ", locatie='" + locatie + '\'' +
+                ", lundi='" + lundi + '\'' +
+                ", maandag='" + maandag + '\'' +
+                ", monday='" + monday + '\'' +
+                ", mardi='" + mardi + '\'' +
+                ", dinsdag='" + dinsdag + '\'' +
+                ", tuesday='" + tuesday + '\'' +
+                ", wednesday='" + wednesday + '\'' +
+                ", woensdag='" + woensdag + '\'' +
+                ", mercredi='" + mercredi + '\'' +
+                ", jeudi='" + jeudi + '\'' +
+                ", thursday='" + thursday + '\'' +
+                ", donderdag='" + donderdag + '\'' +
+                ", vendredi='" + vendredi + '\'' +
+                ", friday='" + friday + '\'' +
+                ", vrijdag='" + vrijdag + '\'' +
+                ", samedi='" + samedi + '\'' +
+                ", zaterdag='" + zaterdag + '\'' +
+                ", saturday='" + saturday + '\'' +
+                ", coordonneesWgs84=" + coordonneesWgs84 +
+                '}';
+    }
+
+    @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.emplacement);
         dest.writeString(this.locationInFrench);

@@ -1,6 +1,5 @@
 package com.example.vmartin.pocmvvm.ui.foodtrucklist;
 
-import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleFragment;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProvider;
@@ -9,7 +8,6 @@ import android.databinding.DataBindingComponent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,8 +69,6 @@ public class ListFragment extends LifecycleFragment implements Injectable {
         listViewModel.getFoodTrucks().observe(this, new Observer<Resource<List<Record>>>() {
             @Override
             public void onChanged(@Nullable Resource<List<Record>> records) {
-                Log.d("pouet ", records.toString());
-
                 mBinding.setListResource(records);
                 if (records != null) {
                     mFoodTruckAdapter.setData(records.data);
@@ -85,10 +81,7 @@ public class ListFragment extends LifecycleFragment implements Injectable {
     private final FoodTruckClickCallback mFoodTruckClickCallback = new FoodTruckClickCallback() {
         @Override
         public void onClick(Record record) {
-
-            if (getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)) {
-                //((MainActivity) getActivity()).show(record);
-            }
+            //TODO : send to details
         }
     };
 }

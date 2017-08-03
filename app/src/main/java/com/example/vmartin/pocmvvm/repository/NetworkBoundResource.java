@@ -26,8 +26,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.WorkerThread;
 
-import com.example.vmartin.pocmvvm.data.api.ApiResponse;
 import com.example.vmartin.pocmvvm.data.Resource;
+import com.example.vmartin.pocmvvm.data.api.ApiResponse;
 import com.example.vmartin.pocmvvm.data.util.AbsentLiveData;
 
 /**

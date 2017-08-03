@@ -1,0 +1,12 @@
+{
+  "nhits": 2,
+  "geofilterdistance" : "test",
+  "records": [
+    {
+      "recordid": "test"
+    },
+    {
+      "recordid": "test2"
+    }
+  ]
+}

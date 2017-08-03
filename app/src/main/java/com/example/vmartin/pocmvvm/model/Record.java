@@ -27,7 +27,11 @@ public class Record implements Parcelable {
     private FoodTruckPlace fields;
     private Geometry geometry;
 
-    private Record(Parcel in) {
+    public Record() {
+
+    }
+
+    public Record(Parcel in) {
         this.datasetid = in.readString();
         this.recordid = in.readString();
         this.fields = in.readParcelable(FoodTruckPlace.class.getClassLoader());
@@ -107,6 +111,8 @@ public class Record implements Parcelable {
         dest.writeParcelable(this.fields, 0);
         dest.writeParcelable(this.geometry, 0);
     }
+
+
 
     public String getFoodTruck() {
         String foodTruckName = "No food truck today";

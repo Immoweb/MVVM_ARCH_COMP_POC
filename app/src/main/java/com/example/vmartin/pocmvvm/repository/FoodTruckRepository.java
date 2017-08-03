@@ -38,6 +38,7 @@ public class FoodTruckRepository {
                 return Transformations.map(res, new Function<ResponseOpenData, List<Record>>() {
                     @Override
                     public List<Record> apply(ResponseOpenData input) {
+                        Log.d("pouet", "response : " + input);
                         if (input == null) {
                             return null;
                         } else {
@@ -50,7 +51,6 @@ public class FoodTruckRepository {
             @NonNull
             @Override
             protected LiveData<ApiResponse<ResponseOpenData>> createCall() {
-                Log.d("pouet ", "loadNetwork");
                 return webService.getAllFoodTruck(input);
             }
 
@@ -60,5 +60,7 @@ public class FoodTruckRepository {
         }.asLiveData();
 
     }
+
+
 
 }
