@@ -16,18 +16,16 @@ import com.example.vmartin.pocmvvm.R;
 import com.example.vmartin.pocmvvm.binding.FragmentDataBindingComponent;
 import com.example.vmartin.pocmvvm.data.Resource;
 import com.example.vmartin.pocmvvm.databinding.FragmentListBinding;
-import com.example.vmartin.pocmvvm.di.Injectable;
 import com.example.vmartin.pocmvvm.model.Record;
+import com.example.vmartin.pocmvvm.repository.FoodTruckRepository;
 import com.example.vmartin.pocmvvm.ui.common.RetryCallback;
+import com.example.vmartin.pocmvvm.util.TruckViewModelFactory;
 
 import java.util.List;
 
-import javax.inject.Inject;
 
+public class ListFragment extends LifecycleFragment {
 
-public class ListFragment extends LifecycleFragment implements Injectable {
-
-    @Inject
     ViewModelProvider.Factory viewModelFactory;
 
     private FragmentListBinding mBinding;
@@ -36,7 +34,7 @@ public class ListFragment extends LifecycleFragment implements Injectable {
 
     ListViewModel listViewModel;
 
-    DataBindingComponent dataBindingComponent = new FragmentDataBindingComponent(this);
+    DataBindingComponent dataBindingComponent = new FragmentDataBindingComponent();
 
     @Nullable
     @Override
@@ -57,6 +55,7 @@ public class ListFragment extends LifecycleFragment implements Injectable {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        viewModelFactory = new TruckViewModelFactory(new FoodTruckRepository());
         listViewModel = ViewModelProviders.of(this, viewModelFactory).get(ListViewModel.class);
         mFoodTruckAdapter = new FoodTruckAdapter(dataBindingComponent,
                 mFoodTruckClickCallback);

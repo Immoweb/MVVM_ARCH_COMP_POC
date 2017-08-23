@@ -16,15 +16,12 @@ import com.example.vmartin.pocmvvm.util.Objects;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
 public class ListViewModel extends ViewModel {
 
     private final MutableLiveData<Integer> param = new MutableLiveData<>();
 
     private final LiveData<Resource<List<Record>>> mObservableData;
 
-    @Inject
     public ListViewModel(final FoodTruckRepository repository) {
         mObservableData = Transformations.switchMap(param, new Function<Integer,
                 LiveData<Resource<List<Record>>>>() {

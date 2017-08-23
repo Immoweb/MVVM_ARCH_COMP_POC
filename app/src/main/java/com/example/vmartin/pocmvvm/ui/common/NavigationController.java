@@ -22,15 +22,13 @@ import com.example.vmartin.pocmvvm.MainActivity;
 import com.example.vmartin.pocmvvm.R;
 import com.example.vmartin.pocmvvm.ui.foodtrucklist.ListFragment;
 
-import javax.inject.Inject;
-
 /**
  * A utility class that handles navigation
  */
 public class NavigationController {
     private final int containerId;
     private final FragmentManager fragmentManager;
-    @Inject
+
     public NavigationController(MainActivity mainActivity) {
         this.containerId = R.id.fragment_container;
         this.fragmentManager = mainActivity.getSupportFragmentManager();

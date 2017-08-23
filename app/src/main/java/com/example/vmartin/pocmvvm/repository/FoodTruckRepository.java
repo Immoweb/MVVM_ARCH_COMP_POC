@@ -14,13 +14,10 @@ import com.example.vmartin.pocmvvm.model.ResponseOpenData;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
 public class FoodTruckRepository {
 
     private final WebService webService;
 
-    @Inject
     public FoodTruckRepository(WebService webService) {
         this.webService = webService;
     }

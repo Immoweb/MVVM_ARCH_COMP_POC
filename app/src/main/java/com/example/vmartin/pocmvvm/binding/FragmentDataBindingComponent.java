@@ -17,7 +17,6 @@
 package com.example.vmartin.pocmvvm.binding;
 
 import android.databinding.DataBindingComponent;
-import android.support.v4.app.Fragment;
 
 /**
  * A Data Binding Component implementation for fragments.
@@ -25,8 +24,8 @@ import android.support.v4.app.Fragment;
 public class FragmentDataBindingComponent implements DataBindingComponent {
     private final FragmentBindingAdapters adapter;
 
-    public FragmentDataBindingComponent(Fragment fragment) {
-        this.adapter = new FragmentBindingAdapters(fragment);
+    public FragmentDataBindingComponent() {
+        this.adapter = new FragmentBindingAdapters();
     }
 
     @Override
