@@ -20,6 +20,12 @@ android {
     dataBinding {
         enabled = true
     }
+    lintOptions {
+        htmlReport true
+        htmlOutput file("lint-report.html")
+        abortOnError true
+        warningsAsErrors true
+    }
 }
 
 dependencies {

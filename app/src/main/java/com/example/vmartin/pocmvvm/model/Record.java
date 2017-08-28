@@ -113,7 +113,6 @@ public class Record implements Parcelable {
     }
 
 
-
     public String getFoodTruck() {
         String foodTruckName = "No food truck today";
         switch (Calendar.getInstance(Locale.US).get(Calendar.DAY_OF_WEEK)) {
