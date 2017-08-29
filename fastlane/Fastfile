@@ -16,12 +16,13 @@ fastlane_version "2.54.1"
 default_platform :android
 
 platform :android do
-  before_all do
-    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
-  end
-
-  desc "Runs all the tests"
-  lane :test do
+  #####################################
+  ########### public lanes ############
+  #####################################
+  
+  
+  desc "Test and validate a Pull Request"
+  lane :pull_request do
     gradle(task: "test")
   end
 
@@ -56,6 +57,18 @@ platform :android do
     #   success: false
     # )
   end
+end
+
+#####################################
+########## golbal methods ###########
+#####################################
+
+def is_feature_branch(branch_name)
+  /.*feature\/.*/.match(branch_name)
+end
+
+def is_dev_branch(branch_name)
+  branch_name == "dev"
 end
 
 
